@@ -1,0 +1,91 @@
+body,
+        nav {
+            /* logo-color:#1F95EF */
+            /* background-image:url('water_drops.jpg'); */
+            background-color: #394046 !important;
+            /* background-image:url('blurry_clouds.png');
+            background-repeat:no-repeat;
+            background-size: 100% 100%; */
+        }
+
+        .w_summary {
+            background-image: url('../img/snow-drop.jpg');
+            /* background-image: url('water_drops.jpg'); */
+            /* font-family: Varela Round,arial,sans-serif; */
+        }
+
+        #week-summary .fas,
+        .fa,
+        .far {
+            font-size: 30px;
+            /* color: whitesmoke; */
+        }
+
+        #search_box,
+        #search_btn {
+            border: #0c64a7 1px solid !important;
+        }
+
+        #trends,
+        #summary {
+            background-color: #394046 !important;
+        }
+
+        hr {
+            height: 1px;
+            color: #505a62;
+            background-color: #505a62;
+            border: none;
+        }
+
+        .transparent {
+            background-image: url('../img/blurry_clouds.png');
+            /* background-repeat:no-repeat;
+            background-size: 100% 100%; */
+        }
+
+        .jumbotron {
+            background: rgba(57, 64, 70, 0.596);
+        }
+
+        .cool {
+            font-family: Varela Round, arial, sans-serif;
+            font-size: 20px;
+            line-height: 2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 200;
+            /* font-style: normal; */
+        }
+
+        .display-6 {
+            text-transform: uppercase;
+            font-family: 'Lato', sans-serif;
+            /* font-weight: 200; */
+        }
+
+        #footer {
+            font-family: 'Lato', sans-serif;
+        }
+
+        /* background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
+
+        #day1 {
+            background-image: linear-gradient(to right, rgba(66, 139, 202, 0), rgb(66, 139, 202, 1));
+        }
+
+        #day5 {
+            background-image: linear-gradient(to right, rgba(66, 139, 202, 1), rgb(66, 139, 202, 0));
+        }
+
+        #day2 {
+            background: rgb(211, 18, 64);
+        }
+
+        #day3 {
+            background: rgb(6, 223, 167);
+        }
+
+        #day4 {
+            background: rgb(5, 118, 123);
+        }

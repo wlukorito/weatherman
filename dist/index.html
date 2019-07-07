@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
+        integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <!-- devicon -->
+    <link rel="stylesheet"
+        href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <!-- google font Lato thin -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Luko Weather</title>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-light shadow mb-3">
+        <div class="container">
+            <a href="#" class="navbar-brand text-white">
+                <img src="/img/factor_aa_18.png" alt="">
+            </a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="input-group">
+                    <input class="form-control bg-transparent text-white" type="text"
+                        placeholder="Type name e.g london, or woeid e.g 44418" id="search_box">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-primary" type="button" id="search_btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mb-3 mt-3">
+        <div class="row">
+            <div class="card w-100 shadow p-1" id="summary">
+                <div class="row mr-0 ml-0 w_summary text-white pt-4 pb-3 border-dark rounded-top">
+                    <div class="col w_item">
+                        <span class="display-4" id="place_name"></span>
+                        <p class="lead" id="today"></p>
+                        <p class="text-secondary" id="date_time"></p>
+                    </div>
+                    <div class="col w_item">
+                        <span class="display-4" id="forecast_icon"></span>
+                        <p class="lead" id="forecast_text"></p>
+                        <p class="lead">
+                            <i class="fas fa-wind"></i>
+                            <span class="wind_speed_dir"></span> 
+                        </p>
+                    </div>
+                    <div class="col w_item">
+                        <span class="display-4" id="temp_avg"></span>
+                        <i class="fas fa-temperature-high"></i>
+                        <p class="lead" id="temp_low_high"></p>
+                        <button class="btn btn-outline-primary" id="favorite">Favorite</button>
+                    </div>
+                </div>
+                <div class="row ml-0 mr-0" id="week-summary">
+                    <div class="col text-center bg-grad" id="day1">
+                        <!-- <p>Thur</p>
+                        <p><i class="fas fa-sun"></i></p>
+                        <p>25&deg; 26&deg;</p> -->
+                    </div>
+                    <div class="col text-center" id="day2">
+                        <!-- <p>Fri</p>
+                        <p><i class="fas fa-cloud-sun-rain"></i></p>
+                        <p>25&deg; 26&deg;</p> -->
+                    </div>
+                    <div class="col text-center" id="day3">
+                        <!-- <p>Sat</p>
+                        <p><i class="fas fa-cloud-sun"></i></p>
+                        <p>25&deg; 26&deg;</p> -->
+                    </div>
+                    <div class="col text-center" id="day4">
+                        <!-- <p>Sun</p>
+                        <p><i class="fas fa-cloud-showers-heavy"></i></p>
+                        <p>25&deg; 26&deg;</p> -->
+                    </div>
+                    <div class="col text-center" id="day5">
+                        <!-- <p>Mon</p>
+                        <p><i class="fas fa-cloud-rain"></i></p>
+                        <p>25&deg; 26&deg;</p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="card shadow mt-3 w-100 p-3" id="trends">
+                <span class="cool text-primary text-uppercase">
+                    <i class="fas fa-chart-line"></i>
+                    Trends
+                </span>
+
+                <div class="row">
+                    <div class="col">
+                        <div id="chart"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="transparent">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container text-white text-center">
+                <h4 class="cool text-primary">about weather</h4>
+                <p class="lead">
+                    Weather is a web application that gives weather forecast for 5 days obtained from a real API.
+                    It also gives a 15-day evolution of weather in a graphical form.
+                </p>
+
+                <p class="lead"> Built with
+                    <span class="" style="font-size: 30px;">
+                        <i class="devicon-bootstrap-plain"></i>
+                        <i class="devicon-javascript-plain"></i>
+                        <i class="devicon-html5-plain-wordmark"></i>
+                        <!-- <i class="fab fa-html5"></i>  -->
+                    </span>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col text-primary text-center" id="">
+                <p class="cool">
+                    Share <i class="fas fa-share-square"></i>
+                </p>
+                <p style="font-size: 30px;">
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <i class="fab fa-google-plus-square"></i>
+                    <i class="fab fa-whatsapp"></i>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- nav footer -->
+    <nav class="navbar navbar-expand-sm navbar-light mt-3 pt-3 pb-3">
+        <div class="container" id="footer">
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">&copy; 2019 Luko </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="http://www.lukorito.com">Lukorito.com</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">View on Github</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="https://www.metaweather.com" target="_blank">Powered by
+                        Metaweather</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Bootstrap dependencies -->
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Select2 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+    <!-- highcharts -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+<script type="text/javascript" src="js/bundle.js"></script></body>
+
+</html>
