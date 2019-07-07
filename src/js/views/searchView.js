@@ -27,7 +27,9 @@ export const updateSummary = weather => {
     dom.placeName.textContent = weather.title;
     let consltd_wthr = weather.consolidated_weather[0];
     
-    let {day, date}= dayDate(consltd_wthr.applicable_date, 'yyyy-mm-dd'); //destructure
+    //let {day, date}= dayDate(consltd_wthr.applicable_date, 'yyyy-mm-dd'); //destructure
+    let day= dayDate(consltd_wthr.applicable_date, 'yyyy-mm-dd').day;
+    let date = new Date().toString().slice(0, 33);
     dom.dayOfWeek.textContent = day;
     dom.dateTime.textContent = date;
     dom.forecastIcon.innerHTML = `<i class="${iconResolver(consltd_wthr.weather_state_abbr)}"></i>`;
