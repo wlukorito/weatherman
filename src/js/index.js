@@ -49,7 +49,6 @@ const controlHighchart = async () => {
     state.wind = [];
     state.humidity = [];
     state.categories = [];
-
     console.log('Fetching historical weather data...');
     let daysBack = 9; //get from UI instead: user to select how far back to go
     let today = new Date();
@@ -57,11 +56,18 @@ const controlHighchart = async () => {
         let current = decDate(today, daysBack);
         current = dateFormatter(current, 'yyyy/mm/dd');
         state.categories.push(current.slice(5));
-        const singleDay = await state.search.singleDateWeather(current);
-        
-        state.temperature.push(singleDay.temperature);
-        state.humidity.push(singleDay.humidity);
-        state.wind.push(singleDay.wind);
+
+        try{
+            const singleDay = await state.search.singleDateWeather(current);
+            
+            state.temperature.push(singleDay.temperature);
+            state.humidity.push(singleDay.humidity);
+            state.wind.push(singleDay.wind);
+        }
+        catch(e){
+            console.log(e.message);
+            searchView.clearLoader();
+        }
 
         daysBack--;
     }

@@ -72,7 +72,7 @@ export const dayDate = (dateStr, format) => {
  */
 export const dateFormatter = (date, format) => {
     let day = (date.getDate()) > 9 ? date.getDate() : `0${date.getDate()}`;
-    let month = (date.getMonth() + 1) > 10 ? (date.getMonth() + 1) : `0${date.getMonth() + 1}`; //0 is January
+    let month = (date.getMonth() + 1) > 9 ? (date.getMonth() + 1) : `0${date.getMonth() + 1}`; //0 is January
     let year = date.getFullYear();
     format = format.replace('yyyy', year);
     format = format.replace('mm', month);
