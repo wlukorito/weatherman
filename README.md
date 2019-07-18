@@ -1,5 +1,6 @@
 # weatherman
-weather search based on woeid
+Weather Forecast based on woeid
+
 This application uses WOEID (where on Earth ID) to pull weather information from an API.
 It allows the user to search by giving the woeid directly or the name of a known town. 
 If name is provided, the application first fetches its woeid then uses it to get weather information.
